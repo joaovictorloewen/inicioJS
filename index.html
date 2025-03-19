@@ -17,6 +17,14 @@
             margin: 10px;
             padding: 10px;
         }
+
+        .maior {
+            color: blue;
+        }
+
+        .menor {
+            color: red;
+        }
     </style>
 </head>
 
@@ -39,6 +47,7 @@
 
             if (nomeDigitado.trim() === '' || idadeDigitada.trim() === '') {
                 resultado.textContent = 'Por favor, preencha todos os campos.';
+                resultado.className = '';
                 return;
             }
 
@@ -46,13 +55,16 @@
 
             if (isNaN(idade) || idade < 0) {
                 resultado.textContent = 'Por favor, insira uma idade válida.';
+                resultado.className = '';
                 return;
             }
 
             if (idade >= 18) {
                 resultado.textContent = 'Olá, ' + nomeDigitado + '. Você é maior de idade.';
+                resultado.className = 'maior';
             } else {
                 resultado.textContent = 'Olá, ' + nomeDigitado + '. Você é menor de idade.';
+                resultado.className = 'menor';
             }
         }
     </script>
